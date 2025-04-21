@@ -1,0 +1,29 @@
+.subheading{
+font-family: 'Times New Roman', Times, serif; 
+font-weight: bold; 
+font-size: 35px;
+}
+
+.header-offset{
+    margin-left: -40px
+}
+
+.onpage-link{
+    color: white; 
+    text-decoration: underline;
+}
+
+.onpage-link:hover{
+    color: rgb(106, 129, 190);
+    font-weight: 400;
+}
+
+.blackonpage-link{
+    color: rgb(8, 0, 0); 
+    text-decoration: underline;
+}
+
+.blackonpage-link:hover{
+    color: rgb(106, 129, 190);
+    font-weight: 400;
+}
