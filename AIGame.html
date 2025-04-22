@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Game</title>
+</head>
+<body>
+    <div>
+        <!-- Header -->
+        <a href="index.html" id="Top" class="onpage-link">GO TO PROFESSIONAL PAGES</a>
+        <br>
+        <a href="scratch.html" class="onpage-link">Scratch page</a>
+        <div class="header">
+            <h1 style="font-weight: bold;">Fast Food in the United States</h1>
+        </div>
+        
+        <!-- Body -->
+        <div  class="bodyfont">
+            <!-- Burger Builder HTML -->
+            <div class="burger-builder">
+                <h2>🍔 Build Your Own Burger!</h2>
+                <div class="ingredients">
+                <div class="ingredient" draggable="true" data-name="Top Bun">🥯 Top Bun</div>
+                <div class="ingredient" draggable="true" data-name="Lettuce">🥬 Lettuce</div>
+                <div class="ingredient" draggable="true" data-name="Tomato">🍅 Tomato</div>
+                <div class="ingredient" draggable="true" data-name="Cheese">🧀 Cheese</div>
+                <div class="ingredient" draggable="true" data-name="Patty">🍖 Patty</div>
+                <div class="ingredient" draggable="true" data-name="Bottom Bun">🥯 Bottom Bun</div>
+                </div>
+            
+                <div class="burger-dropzone" id="burgerStack">
+                <p>Drop ingredients here!</p>
+                </div>
+            </div>
+                
+            <button id="resetBurger" class="reset-btn">Reset Burger</button>
+            
+            <!-- Styles -->
+            <style>
+                .burger-builder {
+                    max-width: 600px;
+                    margin: 30px auto;
+                    text-align: center;
+                    font-family: 'Times New Roman', Times, serif;
+                }
+            
+                .ingredients {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                }
+            
+                .ingredient {
+                    background-color: #f2f2f2;
+                    padding: 10px 15px;
+                    border-radius: 8px;
+                    cursor: grab;
+                    user-select: none;
+                    font-size: 1.2em;
+                }
+            
+                .burger-dropzone {
+                    min-height: 300px;
+                    width: 200px;
+                    margin: auto;
+                    border: 2px dashed #aaa;
+                    border-radius: 12px;
+                    background-color: #fffce6;
+                    display: flex;
+                    flex-direction: column-reverse;
+                    align-items: center;
+                    padding: 10px;
+                }
+            
+                .dropped-ingredient {
+                    margin: 2px 0;
+                    font-size: 1.5em;
+                    transition: transform 0.2s ease;
+                }
+            
+                .burger-dropzone.drag-over {
+                    border-color: #4caf50;
+                    background-color: #f1fff0;
+                }
+
+                .reset-btn {
+                    margin-top: 15px;
+                    padding: 10px 20px;
+                    font-size: 1em;
+                    background-color: #ff4d4d;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                }
+
+                .reset-btn:hover {
+                    background-color: #e60000;
+                }
+
+            </style>
+            
+            <!-- Script -->
+            <script>
+                const ingredients = document.querySelectorAll('.ingredient');
+                const dropzone = document.getElementById('burgerStack');
+            
+                ingredients.forEach(ingredient => {
+                ingredient.addEventListener('dragstart', e => {
+                    e.dataTransfer.setData('text/plain', ingredient.dataset.name);
+                    e.dataTransfer.setData('text/emoji', ingredient.textContent);
+                });
+                });
+            
+                dropzone.addEventListener('dragover', e => {
+                e.preventDefault();
+                dropzone.classList.add('drag-over');
+                });
+            
+                dropzone.addEventListener('dragleave', () => {
+                dropzone.classList.remove('drag-over');
+                });
+            
+                dropzone.addEventListener('drop', e => {
+                e.preventDefault();
+                dropzone.classList.remove('drag-over');
+                const emoji = e.dataTransfer.getData('text/emoji');
+            
+                const el = document.createElement('div');
+                el.className = 'dropped-ingredient';
+                el.textContent = emoji.trim().split(' ')[0];
+                dropzone.appendChild(el);
+                });
+
+                document.getElementById('resetBurger').addEventListener('click', () => {
+                dropzone.innerHTML = '<p>Drop ingredients here!</p>';
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>
