@@ -1,0 +1,99 @@
+
+.scratchbg {
+    background-image: url('../assets/img/scratch-bg.jpg');
+    background-position: top left;  
+}
+
+/* Basic groupings */
+    .bodyfont{
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(198, 198, 198);
+        text-align: left;
+        margin-bottom: 80px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .header{
+        width: 60%; 
+        margin: 0 auto;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 35px;
+        color: rgb(198, 198, 198);
+    }
+
+    .footer{
+        bottom: 0px;
+        height: 25px;
+        left: 0px;
+        right: 0px;
+        padding-top: 15px;
+        position: fixed;
+        background-image: url('../assets/img/scratch-ft.jpg');
+        text-align: center;
+    }
+
+    .li{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+
+/* Links */
+    .onpage-link{
+        color: white; 
+        text-decoration: underline;
+    }
+
+    .onpage-link:hover{
+        color: rgb(106, 129, 190);
+        font-weight: 400;
+    }
+
+    .onpage-link:visited{
+        color: lightblue;
+    }
+
+    .footer-link{
+        color: black;
+    }
+
+    .footer-link:hover{
+        color: rgb(16, 0, 122);
+    }
+
+    .footer-link:visited{
+        color: rgb(55, 0, 128);
+    }
+
+
+/* Added Extras */
+
+.youtube{
+    width: 700px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.tableau{
+    width: 800px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 30px;
+    border: 5px solid rgb(15, 93, 121);
+}
+
+.images {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid gray;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .images img {
+    width: auto;
+    height: 139px;
+    border-radius: 4px;
+  }
